@@ -1,0 +1,89 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #282c34;
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #61dafb;
+}
+
+.game-container {
+    text-align: center;
+    background-color: #20232a;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.header {
+    margin-bottom: 20px;
+}
+
+.score-container {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 10px;
+}
+
+.game-board {
+    width: 400px;
+    height: 400px;
+    background-color: #000;
+    position: relative;
+    margin: 0 auto 20px auto;
+    border: 2px solid #61dafb;
+    box-shadow: inset 0 0 10px #000;
+}
+
+.snake, .food {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 5px;
+}
+
+.snake {
+    background-color: #0f0;
+    transition: background-color 0.2s;
+}
+
+.food {
+    background-color: #f00;
+    animation: food-pulse 1s infinite;
+}
+
+@keyframes food-pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    background-color: #61dafb;
+    color: #20232a;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+button:hover {
+    background-color: #21a1f1;
+    transform: translateY(-2px);
+}
+
+#gameOverMessage {
+    display: none;
+    font-size: 24px;
+    color: #f00;
+    margin-top: 20px;
+    font-weight: bold;
+}
